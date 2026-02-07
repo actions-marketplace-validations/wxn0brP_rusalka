@@ -57,6 +57,7 @@ runs:
         publish_dir: ./typedocs-generated
         destination_dir: ${{ steps.rusalka.outputs.destination_dir }}
         publish_branch: ${{ steps.rusalka.outputs.typedocs }}
+        keep_files: true
 
 inputs:
   GITHUB_TOKEN:
