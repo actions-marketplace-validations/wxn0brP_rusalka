@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/wxn0brP/rusalka/compare/v0.0.3...v0.0.4) (2026-02-17)
+
+
+### Features
+
+* 404 page ([f1b54d6](https://github.com/wxn0brP/rusalka/commit/f1b54d6b53ce205d1c6fb0570a0a36c51ef71044))
+* build fn ([fb434e3](https://github.com/wxn0brP/rusalka/commit/fb434e355f2ff568e38310ba746cbeff11b9cb55))
+* bump deps ([14e311e](https://github.com/wxn0brP/rusalka/commit/14e311e76fc2aa09c0ece33735dbd6c6ec623a14))
+* dest dir ([61a88df](https://github.com/wxn0brP/rusalka/commit/61a88df09f2ff87056ead102684f78d6164c45e0))
+* gh-pages force_orphan = false ([9bc7ddf](https://github.com/wxn0brP/rusalka/commit/9bc7ddff681a8107857f2be87104e837db6e83c4))
+* gh-pages keep files ([9d7ddcd](https://github.com/wxn0brP/rusalka/commit/9d7ddcd10506316d6e265d03d69b6b74072a8f16))
+* make createVersionedBranch = true ([fa47fb4](https://github.com/wxn0brP/rusalka/commit/fa47fb40dedbda798678ab4d2025326f78dcb8c2))
+* notDeleteTests ([bf914b0](https://github.com/wxn0brP/rusalka/commit/bf914b084388c48265ab3c57496587b7b670f6e8))
+* publish_branch ([7f65179](https://github.com/wxn0brP/rusalka/commit/7f65179f4229cdbad9e2ae0f2f28086fc30453db))
+* typeDocs ([8dd31bb](https://github.com/wxn0brP/rusalka/commit/8dd31bb2cf1413a150817f5809b41f11c59abedb))
+
+
+### Bug Fixes
+
+* workflow deps ([1d189ba](https://github.com/wxn0brP/rusalka/commit/1d189ba0f274262892aad0aba8d9b520fdc3d1c1))
+
 ### [0.0.3](https://github.com/wxn0brP/rusalka/compare/v0.0.2...v0.0.3) (2025-10-11)
 
 
