@@ -6,10 +6,20 @@ branding:
   color: "purple"
   icon: "hash"
 
+inputs:
+  GITHUB_TOKEN:
+    description: "GitHub token for publishing to npm"
+    required: false
+  checkout:
+    description: "Checkout repository"
+    required: false
+    default: "true"
+
 runs:
   using: "composite"
   steps:
     - name: Checkout repository
+      if: inputs.checkout == 'true'
       uses: actions/checkout@v6
 
     - name: Setup Bun
@@ -59,11 +69,6 @@ runs:
         publish_branch: ${{ steps.rusalka.outputs.typedocs }}
         keep_files: true
         force_orphan: false
-
-inputs:
-  GITHUB_TOKEN:
-    description: "GitHub token for publishing to npm"
-    required: false
 
 outputs:
   message:
