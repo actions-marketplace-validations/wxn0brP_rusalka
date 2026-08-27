@@ -1,24 +1,23 @@
 # Rusalka
 
-A GitHub Action for deploying TypeScript projects. Rusalka handles building your project, managing `package.json` scripts, and deploying to a specified branch. It also supports publishing to npm and creating versioned branches.
+A GitHub Action for deploying TypeScript projects.
+Rusalka handles building your project, managing `package.json` scripts,
+and deploying to a specified branch.
+It also supports publishing to npm and creating versioned branches.
 
 ## Configuration
 
-Rusalka supports **dynamic configuration** via workflow-specific files. Instead of using action inputs, create a configuration file in the `rusalka` directory that matches your workflow name.
+Rusalka supports **dynamic configuration** via workflow-specific files.
+Instead of using action inputs, create a configuration file in the `rusalka`
+directory that matches your workflow name.
 
-The configuration file can be **TypeScript (`.ts`)** or **JSON (`.json`)**, and should be named after your workflow. For example, if your workflow is named `"Build"`, create either:
+The configuration file should be **TypeScript (`.ts`)**,
+and should be named after your workflow. For example,
+if your workflow is named `"Build"`, create either:
 
 ```
 rusalka/build.ts
 ```
-
-or
-
-```
-rusalka/build.json
-```
-
-> **Note:** Rusalka will **only load one configuration file**. If both `.ts` and `.json` exist for the same workflow, the **TypeScript file (`.ts`) takes priority**.
 
 ### Load Priority
 
@@ -52,9 +51,11 @@ This allows you to use TypeScript for dynamic logic or JSON for static configura
 
 ### Configuration File Example
 
-Create a file in your repository at `rusalka/{workflow-name}.{ts,js,json}` where `{workflow-name}` matches your workflow name in lowercase with spaces replaced by underscores.
+Create a file in your repository at `rusalka/{workflow-name}.{ts,js,json}`
+where `{workflow-name}` matches your workflow name in lowercase with spaces replaced by underscores.
 
-**Example (rusalka/build.ts):**
+## Example (rusalka/build.ts):
+
 ```ts
 export const files = ["dist", "package.json", "LICENSE"];
 export const branch = "dist";
@@ -69,26 +70,6 @@ export const publishBranch = "gh-pages";
 export const destDir = "";
 export const notDeleteTests = false;
 export const syncVersion = true;
-// or export default
-```
-
-**Example (rusalka/build.json):**
-```json
-{
-    "files": ["dist", "package.json", "LICENSE"],
-    "branch": "dist",
-    "preBuildCommands": "",
-    "postBuildCommands": "",
-    "scriptsHandling": "remove-all",
-    "customScripts": [],
-    "publishToNpm": true,
-    "createVersionedBranch": true,
-    "typeDocs": 1,
-    "publishBranch": "gh-pages",
-    "destDir": "",
-    "notDeleteTests": false,
-    "syncVersion": true
-}
 ```
 
 ### Outputs
@@ -130,4 +111,6 @@ jobs:
 
 ```
 
-**Note:** Make sure to create the corresponding configuration file in the `rusalka` directory that matches your workflow name.
+## License
+
+MIT
