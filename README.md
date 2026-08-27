@@ -48,6 +48,7 @@ This allows you to use TypeScript for dynamic logic or JSON for static configura
 | `publishBranch` | string | Target branch for publishing type docs (if typeDocs enabled) | `"gh-pages"` |
 | `destDir` | string | Destination directory for publishing type docs (if typeDocs enabled) | `""` |
 | `notDeleteTests` | boolean | Do not delete ./src/test if exists | `false` |
+| `syncVersion` | boolean | Synchronize version between package.json and src/version.ts | `true` |
 
 ### Configuration File Example
 
@@ -67,6 +68,7 @@ export const typeDocs = 1; // 0 off, 1 if publishToNpm, 2 always
 export const publishBranch = "gh-pages";
 export const destDir = "";
 export const notDeleteTests = false;
+export const syncVersion = true;
 // or export default
 ```
 
@@ -84,7 +86,8 @@ export const notDeleteTests = false;
     "typeDocs": 1,
     "publishBranch": "gh-pages",
     "destDir": "",
-    "notDeleteTests": false
+    "notDeleteTests": false,
+    "syncVersion": true
 }
 ```
 

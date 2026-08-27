@@ -19,6 +19,7 @@ interface Config {
 	publishBranch: string;
 	destDir: string;
 	notDeleteTests: boolean;
+	syncVersion: boolean;
 }
 
 try {
@@ -43,6 +44,7 @@ try {
 		publishBranch: "gh-pages",
 		destDir: "",
 		notDeleteTests: false,
+		syncVersion: true,
 	};
 
 	const workflowName = github.context.workflow
@@ -121,6 +123,19 @@ try {
 			"-rf",
 			"test",
 		]);
+		await exec.exec("rm", [
+			"-rf",
+			"src/test",
+		]);
+		core.endGroup();
+	}
+
+	// --- ADD VERSION ---
+	if (config.syncVersion && fs.existsSync("src/version.ts")) {
+		core.startGroup("💜 Add version");
+		core.info("Adding version");
+		const { version } = JSON.parse(fs.readFileSync("package.json", "utf-8"));
+		fs.writeFileSync("src/version.ts", `export const version = "${version}";`);
 		core.endGroup();
 	}
 
